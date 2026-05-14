@@ -105,7 +105,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Section */}
       <section id="projects" className="bg-white py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
@@ -121,7 +120,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills / Footer Section (Placeholder) */}
       <section id="skills" className="py-20 bg-gray-900 text-white text-center">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold mb-4">Ready to Automate Your Business?</h2>
