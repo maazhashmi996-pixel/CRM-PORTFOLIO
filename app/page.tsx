@@ -1,65 +1,80 @@
-import Image from "next/image";
+import { PROJECTS } from "@/constants/project";
+import ProjectCard from "@/components/CRMCard";
+import { ArrowRight, Mail } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="bg-[#fcfcfd] min-h-screen font-sans text-gray-900">
+      {/* Navbar */}
+      <nav className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+        <div className="flex items-center gap-2">
+          <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xl">S</div>
+          <span className="font-bold text-xl tracking-tight">SoftHub <span className="text-gray-400 font-medium text-sm">Pvt. Ltd</span></span>
+        </div>
+        <div className="hidden md:flex gap-8 text-sm font-medium text-gray-500">
+          <a href="#" className="text-blue-600">Home</a>
+          <a href="#">About</a>
+          <a href="#">Projects</a>
+          <a href="#">Skills</a>
+        </div>
+        <button className="bg-blue-50 text-blue-600 px-6 py-2.5 rounded-full font-bold text-sm hover:bg-blue-100 transition-all flex items-center gap-2">
+          Contact Me <Mail size={16} />
+        </button>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="max-w-7xl mx-auto px-6 pt-20 pb-32 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span className="bg-blue-50 text-blue-600 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            Full Stack Developer | CRM Specialist
+          </span>
+          <h1 className="text-6xl md:text-7xl font-extrabold mt-6 leading-[1.1]">
+            Building Powerful <br />
+            <span className="text-blue-600">CRM & ERP Systems</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-gray-500 mt-8 text-lg max-w-md leading-relaxed">
+            I build modern, scalable and high-performance solutions that help businesses automate, manage and grow efficiently.
           </p>
+          <div className="flex gap-4 mt-10">
+            <button className="bg-gray-900 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 hover:bg-black transition-all">
+              View My Projects <ArrowRight size={20} />
+            </button>
+            <button className="border border-gray-200 px-8 py-4 rounded-2xl font-bold hover:bg-gray-50 transition-all">
+              Contact Me
+            </button>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="relative">
+          <div className="bg-blue-600/5 rounded-[40px] p-8 aspect-square flex items-center justify-center">
+            {/* Mockup Image space like in image 833d044d-ed44-4190-94d6-53734a9236f9.png */}
+            <div className="w-full h-full bg-white rounded-3xl shadow-2xl border border-gray-100 p-4">
+              <div className="w-full h-4 bg-gray-100 rounded-full mb-4"></div>
+              <div className="grid grid-cols-3 gap-4 mb-8">
+                <div className="h-20 bg-blue-50 rounded-2xl"></div>
+                <div className="h-20 bg-green-50 rounded-2xl"></div>
+                <div className="h-20 bg-purple-50 rounded-2xl"></div>
+              </div>
+              <div className="h-40 bg-gray-50 rounded-2xl"></div>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Projects Grid */}
+      <section className="bg-white py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-20">
+            <span className="text-blue-600 font-bold text-sm uppercase">My Work</span>
+            <h2 className="text-4xl font-bold mt-2">Featured CRM & ERP Projects</h2>
+            <p className="text-gray-500 mt-4">Explore my latest systems. Click on any project to view live demo.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {PROJECTS.map((p, i) => (
+              <ProjectCard key={i} project={p} />
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
