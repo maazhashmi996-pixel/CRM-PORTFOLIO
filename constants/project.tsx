@@ -11,5 +11,4 @@ export const PROJECTS = [
         tags: ["Next.js", "TypeScript", "Prisma"],
         liveUrl: "https://your-account-system.com",
     },
-    // Aur projects yahan add karein
 ];
